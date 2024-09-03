@@ -1,12 +1,32 @@
-data = int(input('Enter number 0-8640000:'))
-f_days = 24*60*60
-f_hours = 60*60
-f_minutes = 60
-days= data // f_days
-hours= data % f_days // f_hours
-minutes= data % f_days % f_hours // f_minutes
-seconds= data % f_days % f_hours % f_minutes
-if days == 1:
-    print(f'{days} day {str(hours).zfill(2)}:{str(minutes).zfill(2)}:{str(seconds).zfill(2)}')
-else:
-    print(f'{days} days {str(hours).zfill(2)}:{str(minutes).zfill(2)}:{str(seconds).zfill(2)}')
+number  = int(input("Enter yuor number:"))
+n1 = number // 1000
+n2 = number % 1000 //100
+n3 = number % 100 // 10
+n4 = number % 10
+if number < 9:
+    print(number)
+while number >=  9:
+    if number >= 1000:
+        number = n1 * n2 * n3 * n4
+        print(number)
+    elif number >= 100:
+        number =n2 * n3 * n4
+        print(number)
+    elif number >= 10:
+        number =n3 * n4
+        print(number)
+    elif number == 9:
+        break
+    elif number < 9:
+        print(number)
+    n1 = number // 1000
+    n2 = number % 1000 // 100
+    n3 = number % 100 // 10
+    n4 = number % 10
+
+
+
+
+
+
+
