@@ -1,32 +1,22 @@
-number  = int(input("Enter yuor number:"))
-n1 = number // 1000
-n2 = number % 1000 //100
-n3 = number % 100 // 10
-n4 = number % 10
-if number < 9:
-    print(number)
-while number >=  9:
-    if number >= 1000:
-        number = n1 * n2 * n3 * n4
-        print(number)
-    elif number >= 100:
-        number =n2 * n3 * n4
-        print(number)
-    elif number >= 10:
-        number =n3 * n4
-        print(number)
-    elif number == 9:
-        break
-    elif number < 9:
-        print(number)
-    n1 = number // 1000
-    n2 = number % 1000 // 100
-    n3 = number % 100 // 10
-    n4 = number % 10
+import string
+letters = string.ascii_letters
+user_input = input('Enter letters in format "a-c":').strip()
 
+if len(user_input) == 3 and user_input[0].isalpha() and user_input[1] == '-' and user_input[2]:
+    first_letter = user_input[0]
+    last_letter = user_input[2]
 
+    start_index = letters.index(first_letter)
+    end_index = letters.index((last_letter))
+    if start_index > end_index:
+        result = (f"{letters[start_index:end_index + 1:-1]}")
+        print(result)
+        start_index,end_index = end_index,start_index
+    else:
+        result = letters[start_index:end_index+1]
+        print(result)
 
-
-
+# "s-H" -> stuvwxyzABCDEFGH
+# "a-A" -> abcdefghijklmnopqrstuvwxyzA
 
 
